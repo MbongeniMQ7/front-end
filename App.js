@@ -1,20 +1,23 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState } from 'react';
+import AuthScreen from './screens/AuthScreen.jsx';
+import BiometricPrompt from './screens/BiometricPrompt.jsx';
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+  const [showBiometrics, setShowBiometrics] = useState(false);
+
+  const handleAuthSuccess = () => {
+    // After login/signup success, show biometrics screen
+    setShowBiometrics(true);
+  };
+
+  const handleBiometricsDone = () => {
+    // Navigate to home screen or do nothing for now
+    alert('Biometric setup completed (UI only)');
+  };
+
+  return showBiometrics ? (
+    <BiometricPrompt onDone={handleBiometricsDone} />
+  ) : (
+    <AuthScreen onSuccess={handleAuthSuccess} />
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
