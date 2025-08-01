@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@expo/metro-runtime": "~5.0.4",
+    "@lottiefiles/dotlottie-react": "^0.14.4",
+    "@supabase/supabase-js": "^2.53.0",
     "expo": "~53.0.20",
     "expo-linear-gradient": "~14.1.5",
     "expo-status-bar": "~2.2.3",
@@ -22,6 +24,7 @@
     "react-native": "0.79.5",
     "react-native-linear-gradient": "^2.8.3",
     "react-native-reanimated": "~3.17.4",
+    "react-native-url-polyfill": "^2.0.0",
     "react-native-web": "^0.20.0"
   },
   "devDependencies": {
